@@ -31,13 +31,11 @@ class Display {
         SDL_Quit();
     }
 
-    int getWidth(){
-        return width;
-    }
+    int getWidth() { return width; }
 
-    int getHeight(){
-        return height;
-    }
+    int getHeight() { return height; }
+
+    int getSize() { return width * height; }
 
     void update(SDL_Surface* surface) {
         if (screenTexture != nullptr) {
@@ -48,8 +46,9 @@ class Display {
         SDL_RenderPresent(renderer);
     }
 
-    SDL_Surface* createScreenSurface(){
-        return SDL_CreateRGBSurface(0, width, height, 32, 0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
+    SDL_Surface* createScreenSurface() {
+        return SDL_CreateRGBSurface(0, width, height, 32, 0x00FF0000,
+                                    0x0000FF00, 0x000000FF, 0xFF000000);
     }
 };
 

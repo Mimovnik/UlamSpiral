@@ -12,7 +12,9 @@ add_library(
 
     src/Framework.h
     src/Framework.cpp
+
+    src/Spiral.h
 )
 
-add_executable(UlamSpiral main.cpp)
+add_executable(UlamSpiral src/main.cpp)
 target_link_libraries(${PROJECT_NAME} SOURCE_FILES SDL2 SDL2main)
